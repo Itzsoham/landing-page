@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
+
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Landing Page",
-  description: "Landing pages for a SaaS products",
+  title: "Light Saas Landing Page",
+  description: "Template created by Frontend Tribe",
 };
 
 export default function RootLayout({
@@ -13,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="relative">
-      <body>{children}</body>
+      <body className={clsx(dmSans.className, "antialiased bg-[#EAEEFE]")}>
+        {children}
+      </body>
     </html>
   );
 }
