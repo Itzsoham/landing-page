@@ -14,7 +14,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="py-5">
-        <div className="container">
+        <div className="container mx-auto px-5">
           <div className="flex items-center justify-between">
             <Image src="/logosaas.png" alt="Sass Logo" height={40} width={40} />
             <MenuIcon className="size-5 md:hidden" />
