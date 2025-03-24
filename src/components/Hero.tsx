@@ -8,7 +8,7 @@ export const Hero = () => {
         <div className="md:flex md:items-center md:justify-between">
           <div className="w-[478px] lg:w-[578px]">
             <div className="tag">Version 2.0 is here</div>
-            <h1 className="mt-6 bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-7xl">
+            <h1 className="section-title mt-6 text-left md:text-7xl">
               Pathway to productivity
             </h1>
             <p className="mt-6 text-xl tracking-tight text-[#010D3E]">
