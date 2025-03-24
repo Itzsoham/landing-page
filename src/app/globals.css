@@ -26,4 +26,8 @@
       #eaeefe 100%
     );
   }
+
+  .logo-ticker-img {
+    @apply h-8 w-auto;
+  }
 }
