@@ -28,7 +28,7 @@ export const Hero = () => {
           </div>
           <div className="relative mt-20 md:mt-0 md:h-[648px] md:flex-1">
             <Image
-              className="md:absolute md:-left-6 md:h-full md:w-auto md:max-w-none lg:left-5"
+              className="md:absolute md:-left-6 md:h-full md:w-auto md:max-w-none lg:left-0"
               src="/cog.png"
               alt="Cog Image"
               height={500}
