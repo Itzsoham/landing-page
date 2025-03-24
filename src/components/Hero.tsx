@@ -7,9 +7,7 @@ export const Hero = () => {
       <div className="custom-container">
         <div className="md:flex md:items-center md:justify-between">
           <div className="w-[478px] lg:w-[578px]">
-            <div className="inline-flex rounded-lg border border-[#222]/10 px-3 py-1 text-sm tracking-tight">
-              Version 2.0 is here
-            </div>
+            <div className="tag">Version 2.0 is here</div>
             <h1 className="mt-6 bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-7xl">
               Pathway to productivity
             </h1>
