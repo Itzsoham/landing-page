@@ -31,7 +31,6 @@ export const ProductShowcase = () => {
             SaSS website in just few minutes with this amazing template.
           </p>
         </div>
-        z
         <div className="relative h-auto w-full">
           <Image
             src="/product-image.png"
