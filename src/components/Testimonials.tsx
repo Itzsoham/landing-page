@@ -1,5 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
+import React from "react";
 
 const testimonials = [
   {
@@ -65,32 +68,49 @@ const thirdColum = testimonials.slice(6, 9);
 const TestomonialColumn = (props: {
   testimonials: typeof testimonials;
   className?: string;
+  duration?: number;
 }) => {
   return (
-    <div
-      className={twMerge(
-        "mt-10 flex flex-col gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]",
-        props.className
-      )}
-    >
-      {props.testimonials.map(({ text, imageSrc, name, username }, index) => (
-        <div key={index} className="card">
-          <div>{text}</div>
-          <div className="mt-5 flex items-center gap-2">
-            <Image
-              src={imageSrc}
-              alt={name}
-              width={40}
-              height={40}
-              className="size-10 rounded-full"
-            />
-            <div className="flex flex-col">
-              <div className="font-medium leading-5 tracking-tight">{name}</div>
-              <div className="leading-5 tracking-tight">{username}</div>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className={props.className}>
+      <motion.div
+        animate={{
+          translateY: "-50%",
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+          duration: props.duration || 10,
+        }}
+        className="flex flex-col gap-6 pb-6"
+      >
+        {[...new Array(2).fill(0)].map((_, index) => (
+          <React.Fragment key={index}>
+            {props.testimonials.map(
+              ({ text, imageSrc, name, username }, index) => (
+                <div key={index} className="card">
+                  <div>{text}</div>
+                  <div className="mt-5 flex items-center gap-2">
+                    <Image
+                      src={imageSrc}
+                      alt={name}
+                      width={40}
+                      height={40}
+                      className="size-10 rounded-full"
+                    />
+                    <div className="flex flex-col">
+                      <div className="font-medium leading-5 tracking-tight">
+                        {name}
+                      </div>
+                      <div className="leading-5 tracking-tight">{username}</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            )}
+          </React.Fragment>
+        ))}
+      </motion.div>
     </div>
   );
 };
@@ -110,15 +130,17 @@ export const Testimonials = () => {
             your workflow today.
           </p>
         </div>
-        <div className="flex justify-center gap-6">
-          <TestomonialColumn testimonials={firstColum} />
+        <div className="mt-10 flex max-h-[738px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+          <TestomonialColumn testimonials={firstColum} duration={15} />
           <TestomonialColumn
             testimonials={secondColum}
-            className="hidden md:flex"
+            className="hidden md:block"
+            duration={19}
           />
           <TestomonialColumn
             testimonials={thirdColum}
-            className="hidden lg:flex"
+            className="hidden lg:block"
+            duration={17}
           />
         </div>
       </div>

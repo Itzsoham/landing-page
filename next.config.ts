@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    esmExternals: "loose", // Allows both ESM & CJS dependencies
+  },
 };
 
 export default nextConfig;
